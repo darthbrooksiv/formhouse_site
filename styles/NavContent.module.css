@@ -1,0 +1,180 @@
+.navContent {
+  width: 100%;
+  background-color: #000;
+}
+
+.navItem {
+  width: 70%;
+  max-width: 768px;
+  margin: 0 auto;
+  /* height: 50px; */
+  background-color: #fff;
+  border-bottom: 1px solid #0066FF;
+  cursor: pointer;
+  position: relative;
+  background-color: #000;
+  transition: all 500ms ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .navItem {
+    font-size: 12px;
+  }
+}
+
+.navItem > .navItemInner {
+  background: transparent;
+  border-radius: 8px;
+  padding: 8px 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #0066FF;
+  margin: 5px -10px;
+}
+
+.navItemActive {
+  composes: navItem;
+}
+
+.navItemActive > .navItemInner {
+  background-color: #015AE0;
+  color: #fff;
+}
+
+.navItemChevron {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transform: rotate(-90deg);
+  line-height: 10px;
+  transition: transform 500ms ease-in-out;
+  fill: #0066FF;
+}
+
+.navItemChevronActive {
+  composes: navItemChevron;
+  transform: rotate(90deg);
+  fill: #fff!important;
+}
+
+.contentItemOLD {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.contentItem {
+  margin: 0 auto 10px auto;
+  background-color: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  width: 70%;
+  max-width: 768px;
+  color: #3B3938;
+}
+@media (max-width: 768px) {
+  .content-item {
+    flex-wrap: wrap;
+  }
+}
+
+.contentItemActive {
+  composes: contentItem;
+}
+
+.contentItems {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+}
+
+.contentItemIcon {
+  composes: contentItems;
+  flex-grow: 0;
+  width: 100px;
+  padding: 0 20px;
+  fill: #3B3938;
+}
+
+.contentItemDescription {
+  composes: contentItems;
+  flex-grow: 0;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+.contentItemDetails {
+  composes: contentItems;
+  flex-grow: 0;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+.contentItemLink {
+  composes: contentItems;
+  flex-grow: 0;
+  padding: 0 20px;
+}
+
+.contentItemLink a, .contentItemDetails a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #3B3938;
+}
+
+/* Hover States */
+@media (hover: hover) and (pointer: fine) {
+  .navContentItem:hover {
+    cursor: pointer;
+  }
+  .navContentItem:hover .navItemInner {
+    background-color: #015AE0;
+    color: #fff;
+  }
+  .navContentItem:hover .navItemActive .navItemInner {
+    background-color: #1E78FF;
+  }
+  .navContentItem:hover .navItemChevron {
+    fill: #fff;
+  }
+  .navContentItem:hover .contentItemActive {
+    color: #fff;
+  }
+  .navContentItem:hover .contentItemIcon {
+    fill: #fff;
+  }
+  .navContentItem:hover a {
+    color: #fff;
+  }
+  .navContentItem:hover a:hover {
+    color: #1E78FF;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.scrollToTop {
+  cursor: pointer;
+  color: lightgreen;
+  padding: 60px 0 100px 0;
+  text-transform: uppercase;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.scrollToTop:hover {
+  text-decoration: underline;
+}

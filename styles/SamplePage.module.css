@@ -1,0 +1,25 @@
+.samplePage {
+  position: relative;
+  text-align: center;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(100,100,100,.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  padding-top: 50px;
+}
+
+.imageWrapper {
+  width: 100%;
+  padding: 20px;
+}
