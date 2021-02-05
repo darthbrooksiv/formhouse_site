@@ -5,14 +5,12 @@ import FH from './icons/FH.js'
 function Header({ isLoading }) {
   const [headerLogoStyles, setHeaderLogostyles] = useState(styles.headerLogoInit)
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setHeaderLogostyles(styles.headerLogoFinal)
-  //   }, 2000)
-  // })
+  const onAction = (evt) => {
+    setHeaderLogostyles(styles.headerLogoFinal)
+  }
 
   return (
-    <div className={styles.header} onMouseEnter={() => {setHeaderLogostyles(styles.headerLogoFinal)}}>
+    <div className={styles.header} onMouseMove={onAction} onMouseDown={onAction} onTouchStart={onAction}>
       <div className={headerLogoStyles}>
         <FH height={60} />
       </div>

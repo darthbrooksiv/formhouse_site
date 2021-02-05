@@ -16,7 +16,6 @@
   color: #fff;
   font-size: 20px;
   font-weight: bold;
-  position: fixed;
 }
 
 .headerLogoInit > svg {
@@ -27,7 +26,7 @@
   height: 40px;
   width: 100%;
   margin: 0 auto;
-  transition: all 2s ease-in-out;
+  transition: all 1500ms ease-in-out;
   position: relative;
   background-color: transparent;
   z-index: 100;
@@ -35,7 +34,6 @@
   color: #fff;
   font-size: 20px;
   font-weight: bold;
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;

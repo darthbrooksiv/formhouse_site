@@ -1,3 +1,3 @@
-module.exports = {
-    assetPrefix: '/darthbrooksiv/',
-}
+// module.exports = {
+//     assetPrefix: '/darthbrooksiv/',
+// }

@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react'
+import { useContext, useRef, useState } from 'react'
 import Accordion from 'react-bootstrap/Accordion'
 import { useAccordionToggle } from 'react-bootstrap/AccordionToggle'
 import AccordionContext from 'react-bootstrap/AccordionContext'
@@ -6,26 +6,11 @@ import AccordionCollapse from 'react-bootstrap/AccordionCollapse'
 
 import styles from '../styles/NavContent.module.css'
 
-import SamplePage from './SamplePage.js'
+// import SamplePage from './SamplePage.js'
 import Chevron from './icons/Chevron.js'
 import Saddle from './icons/Saddle.js'
 import TBTC from './icons/TBTC.js'
 import LNPizza from './icons/LNPizza.js'
-
-const navItemsOLD = [
-  {
-    title: 'Trash Can',
-    Content: ({ ...props }) => <SamplePage {...props}>Trash Can</SamplePage>
-  },
-  {
-    title: 'Design Systems',
-    Content: ({ ...props }) => <SamplePage {...props}>Design Systems</SamplePage>
-  },
-  {
-    title: 'Another Section',
-    Content: () => <div>TEST</div>
-  }
-]
 
 const navItems = [
   {
@@ -64,23 +49,9 @@ function NavContent({ isLoading, setIsLoading }) {
             isLoading={isLoading}
             setIsLoading={setIsLoading} />
         ))}
+        <ContactItem />
         <ScrollToTop />
       </Accordion>
-    </div>
-  )
-}
-
-function NavContentItemOLD({ title, Content, eventKey, isLoading, setIsLoading }) {
-  return (
-    <div className={styles.navContentItem}>
-      <NavItem eventKey={eventKey} setIsLoading={setIsLoading}>
-        {title}
-      </NavItem>
-      <AccordionCollapse eventKey={eventKey}>
-        <div className={styles.contentItemOLD}>
-          {Content({ isLoading, setIsLoading })}
-        </div>
-      </AccordionCollapse>
     </div>
   )
 }
@@ -102,11 +73,6 @@ function NavContentItem({ title, icon, description, link, eventKey, isLoading, s
           <div className={styles.contentItemDescription}>
             {description}
           </div>
-          <div className={styles.contentItemDetails}>
-            <a href={link} target="_blank">
-              Details
-            </a>
-          </div>
           <div className={styles.contentItemLink}>
             <a href={link} target="_blank">
               go to {title}
@@ -114,6 +80,35 @@ function NavContentItem({ title, icon, description, link, eventKey, isLoading, s
           </div>
         </div>
       </AccordionCollapse>
+    </div>
+  )
+}
+
+function ContactItem({}) {
+  const [isCopied, setIsCopied] = useState(false)
+
+  const copy = (evt) => {
+    const copyText = document.getElementById("hiddenInput");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    document.execCommand("copy");
+    setIsCopied(true)
+  }
+
+  return (
+    <div className={styles.navContentItem}>
+      <input type="text" value="mike@formhouse.co" id="hiddenInput" className={styles.hiddenInput} onChange={(evt) => {return evt}}></input>
+      <div className={styles.navItem}>
+        <div className={styles.navItemInner} onClick={copy}>
+          Contact
+          <div className={isCopied ? styles.contactCopied : styles.contactNotCopied}>&nbsp;</div>
+          {
+            isCopied
+            ? <div className={styles.isCopiedText}>Email Address is Copied!</div>
+            : null
+          }
+        </div>
+      </div>
     </div>
   )
 }
