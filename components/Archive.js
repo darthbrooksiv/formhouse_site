@@ -79,7 +79,7 @@ function Archive ({ isLoading, setIsLoading, children }) {
             >
               <Container id="imageContainer">
                 <Row className="justify-content-md-center">
-                  <Col>
+                  <Col lg="10">
                     <FHImage imgSrc={key} height={750} width={1000} />
                   </Col>
                 </Row>
