@@ -51,7 +51,6 @@ function Archive ({ isLoading, setIsLoading, children }) {
   useEffect(() => {
     const el = document.getElementById("imageContainer")
     if (el) {
-      console.log("EL: ", el)
       el.scrollIntoView({behavior: "smooth"})
     }
   }, [key])
@@ -94,15 +93,17 @@ function Archive ({ isLoading, setIsLoading, children }) {
 }
 
 function FHImage ({ imgSrc, height, width }) {
+  const ghpLoader = ({ src, width, quality }) => {
+    return `${window.location.origin}${src}`
+  }
+
   return (
     <div className={styles.imageWrapper}>
       <Image
         src={`/${imgSrc}`}
-        quality={80}
         height={height}
         width={width}
-        priority={true}
-        layout="responsive"
+        loader={ghpLoader}
         />
     </div>
   )
