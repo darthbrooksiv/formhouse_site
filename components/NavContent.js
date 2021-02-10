@@ -7,6 +7,7 @@ import AccordionCollapse from 'react-bootstrap/AccordionCollapse'
 import styles from '../styles/NavContent.module.css'
 
 // import SamplePage from './SamplePage.js'
+import Archive from './Archive.js'
 import Chevron from './icons/Chevron.js'
 import Saddle from './icons/Saddle.js'
 import TBTC from './icons/TBTC.js'
@@ -52,6 +53,7 @@ function NavContent({ isLoading, setIsLoading }) {
         <ContactItem />
         <ScrollToTop />
       </Accordion>
+      <Archive />
     </div>
   )
 }
@@ -88,16 +90,23 @@ function ContactItem({}) {
   const [isCopied, setIsCopied] = useState(false)
 
   const copy = (evt) => {
+    evt.stopPropagation()
+    evt.preventDefault()
+
     const copyText = document.getElementById("hiddenInput");
     copyText.select();
     copyText.setSelectionRange(0, 99999); /* For mobile devices */
     document.execCommand("copy");
     setIsCopied(true)
+
+    setTimeout(() => {
+      setIsCopied(false)
+    },8000)
   }
 
   return (
     <div className={styles.navContentItem}>
-      <input type="text" value="mike@formhouse.co" id="hiddenInput" className={styles.hiddenInput} onChange={(evt) => {return evt}}></input>
+      <input type="text" value="mike@formhouse.co" readonly="readonly" id="hiddenInput" className={styles.hiddenInput} onChange={(evt) => {return evt}}></input>
       <div className={styles.navItem}>
         <div className={styles.navItemInner} onClick={copy}>
           Contact

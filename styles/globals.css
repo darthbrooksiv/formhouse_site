@@ -28,6 +28,25 @@ a {
   }
 }
 
+.fade-enter{
+  opacity: 0;
+}
+.fade-exit{
+  opacity: 1;
+}
+.fade-enter-active{
+  opacity: 1;
+}
+.fade-exit-active{
+  opacity: 0;
+}
+.fade-enter-active {
+ transition: opacity 500ms;
+}
+.fade-exit-active {
+  transition: opacity 250ms;
+}
+
 /* Styles */
 /*
  * The Typekit service used to deliver this font or fonts for use on websites

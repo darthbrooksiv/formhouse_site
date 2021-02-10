@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
@@ -8,6 +8,10 @@ import NavContent from '../components/NavContent.js'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    window.onbeforeunload = () => window.scrollTo(0,0)
+  }, [])
 
   return (
     <div className={styles.container}>
