@@ -106,7 +106,7 @@ function ContactItem({}) {
 
   return (
     <div className={styles.navContentItem}>
-      <input type="text" value="mike@formhouse.co" readonly="readonly" id="hiddenInput" className={styles.hiddenInput} onChange={(evt) => {return evt}}></input>
+      <input type="text" value="mike@formhouse.co" readOnly="readonly" id="hiddenInput" className={styles.hiddenInput} onChange={(evt) => {return evt}}></input>
       <div className={styles.navItem}>
         <div className={styles.navItemInner} onClick={copy}>
           Contact
