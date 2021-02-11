@@ -97,14 +97,22 @@ function FHImage ({ imgSrc, height, width }) {
     return `${window.location.origin}${src}`
   }
 
+  // const onLoad = (evt) => {
+  //   const el = document.getElementById("imageContainer")
+  //   if (el) {
+  //     el.scrollIntoView({behavior: "smooth"})
+  //   }
+  // }
+
   return (
     <div className={styles.imageWrapper}>
       <Image
         src={`/${imgSrc}`}
-        height={height}
-        width={width}
         loader={ghpLoader}
+        layout="fill"
+        objectFit="cover"
         />
+        {/* <img src={`${window.location.origin}/${imgSrc}`} className={styles.imgFit} onLoad={onLoad}/> */}
     </div>
   )
 }

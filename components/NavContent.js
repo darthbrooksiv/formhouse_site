@@ -7,7 +7,7 @@ import AccordionCollapse from 'react-bootstrap/AccordionCollapse'
 import styles from '../styles/NavContent.module.css'
 
 // import SamplePage from './SamplePage.js'
-import Archive from './Archive.js'
+// import Archive from './Archive.js'
 import Chevron from './icons/Chevron.js'
 import Saddle from './icons/Saddle.js'
 import TBTC from './icons/TBTC.js'
@@ -53,7 +53,7 @@ function NavContent({ isLoading, setIsLoading }) {
         <ContactItem />
         <ScrollToTop />
       </Accordion>
-      <Archive />
+      {/* <Archive /> */}
     </div>
   )
 }
