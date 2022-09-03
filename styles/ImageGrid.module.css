@@ -20,6 +20,7 @@
   flex-direction: row;
   width: calc(70% + 20px);
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 .imgFit {

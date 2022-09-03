@@ -12,8 +12,16 @@ import Chevron from './icons/Chevron.js'
 import Saddle from './icons/Saddle.js'
 import TBTC from './icons/TBTC.js'
 import LNPizza from './icons/LNPizza.js'
+import Foundation from './icons/Foundation.js'
+import Fold from './icons/Fold.js'
 
 const navItems = [
+  {
+    title: 'Foundation Devices',
+    icon: Foundation,
+    description: 'UX/UI',
+    link: 'https://foundationdevices.com/envoy/'
+  },
   {
     title: 'Saddle.finance',
     icon: Saddle,
@@ -31,6 +39,12 @@ const navItems = [
     icon: LNPizza,
     description: 'Brand + UX/UI',
     link: 'https://ln.pizza'
+  },
+  {
+    title: 'Fold',
+    icon: Fold,
+    description: 'MVP + UX/UI',
+    link: 'https://foldapp.com/'
   },
 ]
 
