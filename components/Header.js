@@ -12,7 +12,8 @@ function Header({ isLoading }) {
   return (
     <div className={styles.header} onMouseMove={onAction} onMouseDown={onAction} onTouchStart={onAction}>
       <div className={headerLogoStyles}>
-        <FH height={60} />
+        {/* <FH height={60} /> */}
+        <span className={styles.headerText}>formhouse</span>
       </div>
     </div>
   )

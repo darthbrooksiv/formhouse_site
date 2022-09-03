@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 
 import Header from '../components/Header.js'
 import NavContent from '../components/NavContent.js'
+import ImageGrid from '../components/ImageGrid.js'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false)
@@ -24,6 +25,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <Header isLoading={isLoading} />
+        <ImageGrid isLoading={isLoading} />
         <NavContent isLoading={isLoading} setIsLoading={setIsLoading} />
       </main>
     </div>

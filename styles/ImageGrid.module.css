@@ -1,0 +1,42 @@
+.imageWrapper {
+  width: 50%;
+  padding: 10px;
+}
+
+.image {
+  width: 100%;
+  border-radius: 60px;
+  border: 2px solid #0066FF;
+}
+
+.image:hover {
+  cursor: pointer;
+  border-color: #00FF47;
+}
+
+.imageGrid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: calc(70% + 20px);
+  margin: 0 auto;
+}
+
+.imgFit {
+  object-fit: cover;
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .ALogo {
+    margin-top: 40px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ALogo:hover {
+    font-size: 48px;
+    transition: font-size 250ms ease-in-out;
+  }
+}
